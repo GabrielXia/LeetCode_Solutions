@@ -12,6 +12,7 @@ public class Solution {
         for(int i = 1;i < size; i++){
         	sum += nums[i];
         	f[i] = Math.max(f[i-1], sum);//f[i+1] = max(f[i],f[i]+nums[i+1])
+        	//f[i+1] = Math.max(f[i-1],f[i-1]+nums[i],nums[i]) instead of sum
         	if(sum<0)sum = 0;//if sum<0, set it to 0
         }
         return f[size-1];
